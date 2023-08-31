@@ -1,12 +1,20 @@
 import streamlit as st
 
-n1_input = st.text_input("Enter First Number")
-n2_input = st.text_input("Enter Second Number")
-n3_input = st.text_input("Enter Third Number")
+st.set_page_config(page_title="Largest Number Finder", page_icon="🔍")
 
-# Convert input to integers if they are not empty
-n1 = int(n1_input) if n1_input else 0
-n2 = int(n2_input) if n2_input else 0
-n3 = int(n3_input) if n3_input else 0
+st.title("Find the Largest Number")
+st.write("Enter three numbers below to find the largest among them.")
 
-st.write("The largest number is:", max(n1, n2, n3))
+n1_input = st.number_input("First Number", value=0)
+n2_input = st.number_input("Second Number", value=0)
+n3_input = st.number_input("Third Number", value=0)
+
+n1 = int(n1_input)
+n2 = int(n2_input)
+n3 = int(n3_input)
+largest_number = max(n1, n2, n3)
+
+st.write("The largest number is:", f"**{largest_number}**")
+
+st.markdown("---")
+st.write("Created by Ujit Kumar - 21f3000786")
